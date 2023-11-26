@@ -12,17 +12,17 @@ pipeline {
                 sh 'mvn compile'
             }
         }
-        stage(CodeReview) {
+        stage('Code Review') {
             steps {
                 sh 'mvn pmd:pmd'
             }
         }
-        stage(UnitTesting){
+        stage('Unit Testing'){
             steps {
                 sh 'mvn test'
             }
         }
-        stage('Codecoverage'){
+        stage('Metric Check'){
             steps {
                sh 'mvn verify'   
             }
